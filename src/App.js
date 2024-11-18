@@ -154,19 +154,59 @@ function App() {
     doc.setFontSize(16);
     doc.text("MAPA DA JUNTA", 125, 20);
     doc.setFontSize(12);
-    doc.setFont("helvetica", "solid");
+    doc.setFont("helvetica", "normal");
     doc.text(`Sessão de: ${formData.sessaoData}`, 105, 40);
-    doc.text("___________________________________________", 100.5, 30);
+    doc.text("_______________________________________", 100.5, 30);
 
     // Adicionando os dados do formulário
+    doc.setFontSize(10);
+    doc.text("|", 30, 48.5);
+    doc.text("|", 30, 51);
+    doc.text("|", 30, 54);
+    doc.text("|", 30, 57);
+    doc.text("|", 30, 60);
+    doc.text("|", 30, 63);
+    doc.text("|", 30, 66);
+    doc.text("|", 30, 69);
+    doc.text("|", 30, 72);
+    doc.text("|", 30, 75);
+    doc.text("|", 30, 78);
+    doc.text("|", 30, 81);
+    doc.text("|", 30, 84);
+    doc.text("|", 30, 87);
+    doc.text("|", 30, 90);
+    doc.text("|", 30, 93);
+    doc.text("|", 30, 96);
+    doc.text("|", 30, 99);
+    doc.text("|", 30, 102);
+    doc.text("|", 30, 105);
+    doc.text("|", 30, 108);
+    doc.text("|", 30, 111);
+    doc.text("|", 30, 114);
+    doc.text("|", 30, 117);
+    doc.text("|", 30, 120);
+    doc.text("|", 30, 123);
+    doc.text("|", 30, 126);
+    doc.text("|", 30, 129);
+    doc.text("|", 30, 132);
+    doc.text("|", 30, 135);
+    doc.text("|", 30, 138);
+    doc.text("|", 30, 141);
+    doc.text("|", 30, 144);
+    doc.text("|", 30, 147);
+    doc.text("|", 30, 150);
+    doc.text("|", 30, 153);
+    doc.text("|", 30, 156);
+
+
     doc.setFontSize(12);
-    doc.text(`Nome: ${formData.nome}`, 20, 60);
-    doc.text(`Apelido: ${formData.apelido}`, 20, 70);
-    doc.text(`BI: ${formData.bi}`, 20, 80);
-    doc.text(`Naturalidade: ${formData.naturalidade}`, 20, 90);
-    doc.text(`Data de Nascimento: ${formData.dataNascimento}`, 20, 100);
-    doc.text(`Local de Trabalho: ${formData.localTrabalho}`, 20, 110);
-    doc.text(`Profissão: ${formData.profissao}`, 20, 120);
+    doc.text(`Nome: ${formData.nome}`, 40, 60);
+    doc.text(`Apelido: ${formData.apelido}`, 40, 70);
+    doc.text(`BI: ${formData.bi}`, 40, 80);
+    doc.text(`Naturalidade: ${formData.naturalidade}`, 40, 90);
+    doc.text(`Data de Nascimento: ${formData.dataNascimento}`, 40, 100);
+    doc.text(`Local de Trabalho: ${formData.localTrabalho}`, 40, 110);
+    doc.text(`Profissão: ${formData.profissao}`, 40, 120);
     
 
     // Adicionando uma linha de separação
