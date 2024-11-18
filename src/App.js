@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import jsPDF from "jspdf";
 
 function App() {
   const [searchData, setSearchData] = useState({
@@ -101,8 +102,78 @@ function App() {
     });
   };
 
-  const handlePrint = () => {
-    window.print();
+ // Carregar imagem do emblema e preparar para o PDF
+  const loadImage = () => {
+    return new Promise((resolve, reject) => {
+      const image = new Image();
+      image.src = '/emblema.jpeg';
+  
+      image.onload = () => {
+        const canvas = document.createElement('canvas');
+        canvas.width = image.width;
+        canvas.height = image.height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(image, 0, 0);
+        resolve(canvas.toDataURL('image/jpeg')); 
+      };
+  
+      image.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+
+ 
+  const handlePrint = async () => {
+    const doc = new jsPDF(); 
+    doc.setFontSize(12);
+    const imgData = await loadImage(); // Carregar a imagem
+
+    doc.addImage(imgData, 'JPEG', 50, 10, 15, 15); // Adicionando a imagem ao PDF, na posição (10, 10) e tamanho (50x50)
+    doc.setFontSize(10);
+    doc.text('REPUBLICA DE MOÇAMBIQUE', 28, 30);
+    doc.text("|", 100, 6);
+    doc.text("|", 100, 9);
+    doc.text("|", 100, 12);
+    doc.text("|", 100, 15);
+    doc.text("|", 100, 18);
+    doc.text("|", 100, 21);
+    doc.text("|", 100, 24);
+    doc.text("|", 100, 27);
+    doc.text("|", 100, 30);
+    doc.text("|", 100, 33);
+    doc.text("|", 100, 36);
+    doc.text("|", 100, 39);
+    doc.text("|", 100, 42);
+    doc.text("|", 100, 45);
+
+    doc.setFontSize(12);
+    doc.text('SERVIÇO NACIONAL DE SAÚDE', 20, 40);
+    doc.text("_________________________________________________________________________", 20, 45);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(16);
+    doc.text("MAPA DA JUNTA", 125, 20);
+    doc.setFontSize(12);
+    doc.setFont("helvetica", "solid");
+    doc.text(`Sessão de: ${formData.sessaoData}`, 105, 40);
+    doc.text("___________________________________________", 100.5, 30);
+
+    // Adicionando os dados do formulário
+    doc.setFontSize(12);
+    doc.text(`Nome: ${formData.nome}`, 20, 60);
+    doc.text(`Apelido: ${formData.apelido}`, 20, 70);
+    doc.text(`BI: ${formData.bi}`, 20, 80);
+    doc.text(`Naturalidade: ${formData.naturalidade}`, 20, 90);
+    doc.text(`Data de Nascimento: ${formData.dataNascimento}`, 20, 100);
+    doc.text(`Local de Trabalho: ${formData.localTrabalho}`, 20, 110);
+    doc.text(`Profissão: ${formData.profissao}`, 20, 120);
+    
+
+    // Adicionando uma linha de separação
+    doc.text("___________________________________", 20, 140);
+
+    // Gerando o PDF e permitindo o download
+    doc.save("Mapa Da Junta.pdf");
   };
 
   return (
