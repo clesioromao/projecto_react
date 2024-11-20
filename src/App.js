@@ -254,7 +254,7 @@ function App() {
     doc.text(`Profissão: ${formData.profissao}`, 40, 112);
     
     doc.text("___________________________________________________________________________________", 30.5, 125);
-    doc.text(`Licenca da junta: `, 33, 132);
+    doc.text(`Licença da junta: `, 33, 132);
     doc.text("___________________________________________________________________________________", 30.5, 135);
     
     doc.text("|", 40, 138);
@@ -318,11 +318,11 @@ function App() {
     doc.text("|", 83, 195);
 
 
-    doc.text(`    Lesao e numero
+    doc.text(`    Lesão e número
     correspondente
     da tabela`, 43, 140);
     doc.text("______________________________________________________________________________", 40.5, 150);
-    doc.text(`    Funcoes alternadas
+    doc.text(`    Funções alternadas
     e em que grau`, 43, 157);
     doc.text("______________________________________________________________________________", 40.5, 165);
     doc.text(`    Antiguidade 
@@ -348,7 +348,7 @@ function App() {
 
     doc.text(`2ª Vogal`, 62, 275);
     doc.text(".........................................................", 45, 283);
-    doc.text(`O Secretario`, 152, 275);
+    doc.text(`O Secretário`, 152, 275);
     doc.text(".........................................................", 135, 283);
 
     doc.save("Mapa Da Junta.pdf");
