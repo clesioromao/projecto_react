@@ -245,13 +245,13 @@ function App() {
     doc.text("___________________________________________________________________________________", 30.5, 55);
 
     // doc.setFontSize(12);
-    doc.text(`Nome: ${formData.nome}`, 40, 60);
-    doc.text(`Apelido: ${formData.apelido}`, 40, 70);
+    doc.text(`Nome: ${formData.nome}`, 40, 66);
+    doc.text(`Apelido: ${formData.apelido}`, 40, 73);
     doc.text(`BI: ${formData.bi}`, 40, 80);
-    doc.text(`Naturalidade: ${formData.naturalidade}`, 40, 90);
-    doc.text(`Data de Nascimento: ${formData.dataNascimento}`, 40, 100);
-    doc.text(`Local de Trabalho: ${formData.localTrabalho}`, 40, 110);
-    doc.text(`Profissão: ${formData.profissao}`, 40, 120);
+    doc.text(`Naturalidade: ${formData.naturalidade}`, 40, 88);
+    doc.text(`Data de Nascimento: ${formData.dataNascimento}`, 40, 96);
+    doc.text(`Local de Trabalho: ${formData.localTrabalho}`, 40, 104);
+    doc.text(`Profissão: ${formData.profissao}`, 40, 112);
     
     doc.text("___________________________________________________________________________________", 30.5, 125);
     doc.text(`Licenca da junta: `, 33, 132);
@@ -293,6 +293,8 @@ function App() {
     doc.text("|", 40, 237);
     doc.text("|", 40, 240);
 
+    doc.text('INFORMACAO DA JUNTA', 37, 185, { angle: 90 });
+    doc.text('OPINIAO DA JUNTA', 37, 235, { angle: 90 });
 
     doc.text("|", 83, 138);
     doc.text("|", 83, 141);
