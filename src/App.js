@@ -293,8 +293,8 @@ function App() {
     doc.text("|", 40, 237);
     doc.text("|", 40, 240);
 
-    doc.text('INFORMACAO DA JUNTA', 37, 185, { angle: 90 });
-    doc.text('OPINIAO DA JUNTA', 37, 235, { angle: 90 });
+    doc.text('INFORÇÃO DA JUNTA', 37, 185, { angle: 90 });
+    doc.text('OPINIÃO DA JUNTA', 37, 235, { angle: 90 });
 
     doc.text("|", 83, 138);
     doc.text("|", 83, 141);
