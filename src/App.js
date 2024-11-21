@@ -15,19 +15,21 @@ function App() {
     dataNascimento: "",
     localTrabalho: "",
     profissao: "",
+    proveniencia: "",
     lesao: "",
     funcoesAlteradas: "",
     antiguidadeLesao: "",
     contraiuServico: "",
     sessaoData: "",
     opiniaoJunta: "",
+
   });
 
   // Função para buscar dados da API com autenticação e filtragem por nome
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "https://sisma.misau.gov.mz/sisma/api/trackedEntityInstances.json?program=zotyuVPrmLh&totalPages=true&ou=LJX5GuypkKy",
+        "https://sisma.misau.gov.mz/sisma/api/trackedEntityInstances.json?program=zotyuVPrmLh&totalPages=true&ou=LJX5GuypkKy&fields=*",
         {
           auth: {
             username: "cromao", // seu username
@@ -44,6 +46,13 @@ function App() {
       );
 
       if (filteredData) {
+
+// Extrair a proveniência fora do setFormData
+const proveniencia = filteredData.enrollments
+.flatMap(enrollment => enrollment.events) // Extrai todos os eventos
+.flatMap(event => event.dataValues) // Extrai todos os dataValues
+.find(dataValue => dataValue.dataElement === 'vNhE2Iq4ocJ')?.value || ""; // Busca o valor de proveniência
+
         // Preencher o formulário com os dados filtrados
         setFormData({
           nome: filteredData.attributes.find(attr => attr.attribute === 'SxaYBd9dxCI')?.value || "",
@@ -53,6 +62,9 @@ function App() {
           dataNascimento: filteredData.attributes.find(attr => attr.attribute === 'LsEh6golj56')?.value || "",
           localTrabalho: filteredData.attributes.find(attr => attr.attribute === 'f2bttuYO8Nk')?.value || "",
           profissao: filteredData.attributes.find(attr => attr.attribute === 'u5rnWY3v0hX')?.value || "",
+          //proveniencia: filteredData.dataValues.find(data => data.dataElement === 'vNhE2Iq4ocJ')?.value || "",
+          //proveniencia: filteredData.attributes.find(attr => attr.attribute === 'u5rnWY3v0hX')?.value || "",
+          proveniencia: proveniencia, // Adiciona o valor de proveniência
           lesao: "",
           funcoesAlteradas: "",
           antiguidadeLesao: "",
@@ -86,6 +98,7 @@ function App() {
 
   const handleClear = () => {
     setFormData({
+      proveniencia: "",
       nome: "",
       apelido: "",
       bi: "",
@@ -93,6 +106,7 @@ function App() {
       dataNascimento: "",
       localTrabalho: "",
       profissao: "",
+      proveniencia: "",
       lesao: "",
       funcoesAlteradas: "",
       antiguidadeLesao: "",
@@ -241,7 +255,7 @@ function App() {
     doc.text("|", 30, 282);
     doc.text("|", 30, 285);
 
-    doc.text(`Entidade que envia: `, 33, 52);
+    doc.text(`Proveniencia: ${formData.proveniencia}`, 33, 52);
     doc.text("___________________________________________________________________________________", 30.5, 55);
 
     // doc.setFontSize(12);
@@ -473,6 +487,18 @@ function App() {
             style={{ width: "calc(100% - 220px)", padding: "8px", textAlign: "left" }}
           />
         </div>
+
+        <div>
+          <label style={{ width: "200px", display: "inline-block", textAlign: "left" }}>Proveniencia</label>
+          <input
+            type="text"
+            name="entidade_que_envia"
+            value={formData.proveniencia}
+            onChange={handleChange}
+            style={{ width: "calc(100% - 220px)", padding: "8px", textAlign: "left" }}
+          />
+        </div>
+
 
         <div>
           <button
