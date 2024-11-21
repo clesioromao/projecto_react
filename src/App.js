@@ -259,16 +259,16 @@ const proveniencia = filteredData.enrollments
     doc.text("___________________________________________________________________________________", 30.5, 55);
 
     // doc.setFontSize(12);
-    doc.text(`Nome: ${formData.nome}`, 40, 60);
-    doc.text(`Apelido: ${formData.apelido}`, 40, 70);
+    doc.text(`Nome: ${formData.nome}`, 40, 66);
+    doc.text(`Apelido: ${formData.apelido}`, 40, 73);
     doc.text(`BI: ${formData.bi}`, 40, 80);
-    doc.text(`Naturalidade: ${formData.naturalidade}`, 40, 90);
-    doc.text(`Data de Nascimento: ${formData.dataNascimento}`, 40, 100);
-    doc.text(`Local de Trabalho: ${formData.localTrabalho}`, 40, 110);
-    doc.text(`Profissão: ${formData.profissao}`, 40, 120);
+    doc.text(`Naturalidade: ${formData.naturalidade}`, 40, 88);
+    doc.text(`Data de Nascimento: ${formData.dataNascimento}`, 40, 96);
+    doc.text(`Local de Trabalho: ${formData.localTrabalho}`, 40, 104);
+    doc.text(`Profissão: ${formData.profissao}`, 40, 112);
     
     doc.text("___________________________________________________________________________________", 30.5, 125);
-    doc.text(`Licenca da junta: `, 33, 132);
+    doc.text(`Licença da junta: `, 33, 132);
     doc.text("___________________________________________________________________________________", 30.5, 135);
     
     doc.text("|", 40, 138);
@@ -307,6 +307,8 @@ const proveniencia = filteredData.enrollments
     doc.text("|", 40, 237);
     doc.text("|", 40, 240);
 
+    doc.text('INFORÇÃO DA JUNTA', 37, 185, { angle: 90 });
+    doc.text('OPINIÃO DA JUNTA', 37, 235, { angle: 90 });
 
     doc.text("|", 83, 138);
     doc.text("|", 83, 141);
@@ -330,11 +332,11 @@ const proveniencia = filteredData.enrollments
     doc.text("|", 83, 195);
 
 
-    doc.text(`    Lesao e numero
+    doc.text(`    Lesão e número
     correspondente
     da tabela`, 43, 140);
     doc.text("______________________________________________________________________________", 40.5, 150);
-    doc.text(`    Funcoes alternadas
+    doc.text(`    Funções alternadas
     e em que grau`, 43, 157);
     doc.text("______________________________________________________________________________", 40.5, 165);
     doc.text(`    Antiguidade 
@@ -360,7 +362,7 @@ const proveniencia = filteredData.enrollments
 
     doc.text(`2ª Vogal`, 62, 275);
     doc.text(".........................................................", 45, 283);
-    doc.text(`O Secretario`, 152, 275);
+    doc.text(`O Secretário`, 152, 275);
     doc.text(".........................................................", 135, 283);
 
     doc.save("Mapa Da Junta.pdf");
