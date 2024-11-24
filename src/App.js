@@ -259,18 +259,24 @@ const proveniencia = filteredData.enrollments
     doc.text("___________________________________________________________________________________", 30.5, 55);
 
     // doc.setFontSize(12);
-    doc.text(`Nome: ${formData.nome}`, 40, 66);
-    doc.text(`Apelido: ${formData.apelido}`, 40, 73);
-    doc.text(`BI: ${formData.bi}`, 40, 80);
-    doc.text(`Naturalidade: ${formData.naturalidade}`, 40, 88);
-    doc.text(`Data de Nascimento: ${formData.dataNascimento}`, 40, 96);
-    doc.text(`Local de Trabalho: ${formData.localTrabalho}`, 40, 104);
-    doc.text(`Profissão: ${formData.profissao}`, 40, 112);
+    doc.text(`Nome: ${formData.nome}`, 40, 62);
+    doc.text(`Apelido: ${formData.apelido}`, 40, 69);
+    doc.text(`BI: ${formData.bi}`, 40, 76);
+    doc.text(`Naturalidade: ${formData.naturalidade}`, 40, 83);
+    doc.text(`Data de Nascimento: ${formData.dataNascimento}`, 40, 90);
+    doc.text(`Local de Trabalho: ${formData.localTrabalho}`, 40, 97);
+    doc.text(`Profissão: ${formData.profissao}`, 40, 104);
     
-    doc.text("___________________________________________________________________________________", 30.5, 125);
-    doc.text(`Licença da junta: `, 33, 132);
-    doc.text("___________________________________________________________________________________", 30.5, 135);
+    doc.text("___________________________________________________________________________________", 30.5, 110);
+    doc.text(`Licença da junta: `, 33, 117);
+    doc.text("___________________________________________________________________________________", 30.5, 120);
     
+    
+    doc.text("|", 40, 123);
+    doc.text("|", 40, 126);
+    doc.text("|", 40, 129);
+    doc.text("|", 40, 132);
+    doc.text("|", 40, 135);
     doc.text("|", 40, 138);
     doc.text("|", 40, 141);
     doc.text("|", 40, 144);
@@ -307,9 +313,15 @@ const proveniencia = filteredData.enrollments
     doc.text("|", 40, 237);
     doc.text("|", 40, 240);
 
-    doc.text('INFORÇÃO DA JUNTA', 37, 185, { angle: 90 });
+    doc.text('INFORÇÃO DA JUNTA', 37, 180, { angle: 90 });
     doc.text('OPINIÃO DA JUNTA', 37, 235, { angle: 90 });
 
+    
+    doc.text("|", 83, 123);
+    doc.text("|", 83, 126);
+    doc.text("|", 83, 129);
+    doc.text("|", 83, 132);
+    doc.text("|", 83, 135);
     doc.text("|", 83, 138);
     doc.text("|", 83, 141);
     doc.text("|", 83, 144);
@@ -334,17 +346,17 @@ const proveniencia = filteredData.enrollments
 
     doc.text(`    Lesão e número
     correspondente
-    da tabela`, 43, 140);
-    doc.text("______________________________________________________________________________", 40.5, 150);
+    da tabela`, 43, 127);
+    doc.text("______________________________________________________________________________", 40.5, 142);
     doc.text(`    Funções alternadas
-    e em que grau`, 43, 157);
-    doc.text("______________________________________________________________________________", 40.5, 165);
+    e em que grau`, 43, 150);
+    doc.text("______________________________________________________________________________", 40.5, 160);
     doc.text(`    Antiguidade 
-    a lesao`, 43, 172);
-    doc.text("______________________________________________________________________________", 40.5, 180);
+    a lesao`, 43, 168);
+    doc.text("______________________________________________________________________________", 40.5, 175);
     doc.text(`    Se foi contraido 
     em servico e por 
-    efeito do mesmo`, 43, 185);
+    efeito do mesmo`, 43, 183);
     doc.text("___________________________________________________________________________________", 30.5, 195); 
 
 
