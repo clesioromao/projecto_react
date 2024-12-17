@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import jsPDF from "jspdf";
+import 'font-awesome/css/font-awesome.min.css';
 
 export const App = () => {
   const [searchData, setSearchData] = useState({
@@ -24,6 +25,8 @@ export const App = () => {
     opiniaoJunta: "",
 
   });
+
+
 
   // Função para buscar dados da API com autenticação e filtragem por nome
   const fetchData = async () => {
@@ -381,15 +384,66 @@ const proveniencia = filteredData.enrollments
 
   return (
     <>
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-
-
     <div style={{ padding: "20px", maxWidth: "800px", margin: "auto", textAlign: "center" }}>
       <h1>REPÚBLICA DE MOÇAMBIQUE</h1>
       <h2>SERVIÇO NACIONAL DE SAÚDE</h2>
       <h3>MAPA DA JUNTA</h3>
+
+
+      {/* Campo de pesquisa com ícone */}
+      <div style={{ position: 'relative' }}>
+          <label
+            style={{
+              width: "200px",
+              display: "inline-block",
+              textAlign: "left",
+            }}
+          >
+            Pesquisar por Nome:
+          </label>
+          <input
+            type="text"
+            name="nome"
+            value={searchData.nome}
+            onChange={handleSearchChange}
+            style={{
+              width: "calc(100% - 220px)",
+              padding: "8px 40px 8px 10px", // Adiciona espaçamento à esquerda para o ícone
+              textAlign: "left",
+              borderRadius: "20px",
+              border: "1px solid #ccc", // Borda leve
+            }}
+          />
+          {/* Ícone de pesquisa dentro do input */}
+          <i
+            className="fa fa-search"
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "10px",
+              transform: "translateY(-50%)", // Centraliza verticalmente
+              fontSize: "18px",
+              color: "#888",
+            }}
+          ></i>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       {/* Campo de pesquisa por nome */}
       <div>
@@ -407,12 +461,14 @@ const proveniencia = filteredData.enrollments
         type="button"
         onClick={fetchData} // Botão para carregar dados com base no nome
         style={{
+          display: "inline-block",
           padding: "10px 20px",
           backgroundColor: "orange",
           color: "white",
           border: "none",
           marginTop: "10px",
           cursor: "pointer",
+          borderRadius: "35px",
         }}
       >
         Carregar Dados
@@ -518,7 +574,6 @@ const proveniencia = filteredData.enrollments
           />
         </div>
 
-
         <div>
           <button
             type="submit"
@@ -529,6 +584,7 @@ const proveniencia = filteredData.enrollments
               border: "none",
               marginRight: "10px",
               cursor: "pointer",
+              borderRadius: "3px",
             }}
           >
             Enviar
@@ -540,7 +596,11 @@ const proveniencia = filteredData.enrollments
             style={{
               padding: "10px 20px",
               backgroundColor: "red",
+              border: "none",
               color: "white",
+              marginRight: "10px",
+              cursor: "pointer",
+              borderRadius: "3px",
             }}
           >
             Limpar
@@ -552,8 +612,11 @@ const proveniencia = filteredData.enrollments
             style={{
               padding: "10px 20px",
               backgroundColor: "green",
+              border: "none",
               color: "white",
               marginLeft: "10px",
+              cursor: "pointer",
+              borderRadius: "3px",
             }}
           >
             Imprimir
