@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import jsPDF from "jspdf";
 
-function App() {
+export const App = () => {
   const [searchData, setSearchData] = useState({
     nome: "", // Para pesquisa por nome
   });
@@ -564,5 +564,3 @@ const proveniencia = filteredData.enrollments
     </>
   );
 }
-
-export default App;
