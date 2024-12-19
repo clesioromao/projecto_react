@@ -391,52 +391,48 @@ const proveniencia = filteredData.enrollments
 
 
       {/* Campo de pesquisa com ícone */}
-      <div style={{ position: 'relative' }}>
-          <label
-            style={{
-              width: "200px",
-              display: "inline-block",
-              textAlign: "left",
-            }}
-          >
-            Pesquisar por Nome:
-          </label>
-          <input
-            type="text"
-            name="nome"
-            value={searchData.nome}
-            onChange={handleSearchChange}
-            style={{
-              width: "calc(100% - 220px)",
-              padding: "8px 40px 8px 10px", // Adiciona espaçamento à esquerda para o ícone
-              textAlign: "left",
-              borderRadius: "20px",
-              border: "1px solid #ccc", // Borda leve
-            }}
-          />
-          {/* Ícone de pesquisa dentro do input */}
-          <i
-            className="fa fa-search"
-            style={{
-              position: "absolute",
-              top: "50%",
-              left: "10px",
-              transform: "translateY(-50%)", // Centraliza verticalmente
-              fontSize: "18px",
-              color: "#888",
-            }}
-          ></i>
-        </div>
+      {/* <div style={{ position: 'relative', width: '100%' }}>
+        <label
+          style={{
+            width: "200px",
+            display: "inline-block",
+            textAlign: "left",
+          }}
+        >
+          Pesquisar por Nome:
+        </label>
 
+        <input
+          type="text"
+          name="nome"
+          placeholder="Pesquisar nome ..."
+          value={searchData.nome}
+          onChange={handleSearchChange}
+          style={{
+            width: "calc(100% - 220px)",
+            padding: "8px 40px 8px 10px", // Adiciona espaçamento à esquerda e direita para o ícone
+            textAlign: "left",
+            borderRadius: "20px",
+            border: "1px solid #ccc", // Borda leve
+            position: "relative",
+          }}
+        />
 
-
-
-
-
-
-
-
-
+        {/* Ícone de pesquisa dentro do input */}
+        {/* <i
+          className="fa fa-search"
+          onClick={fetchData}
+          style={{
+            position: "absolute",
+            right: "100px", // Alinha o ícone à direita
+            top: "70%",
+            transform: "translateY(-50%)", // Centraliza verticalmente
+            fontSize: "12px",
+            color: "#888",
+            cursor: "pointer",
+          }}
+        ></i>
+      </div> */} 
 
 
 
@@ -446,15 +442,30 @@ const proveniencia = filteredData.enrollments
 
 
       {/* Campo de pesquisa por nome */}
-      <div>
+      <div style={{ position: 'relative', width: '100%'}}>
         <label style={{ width: "200px", display: "inline-block", textAlign: "left" }}>Pesquisar por Nome:</label>
         <input
           type="text"
           name="nome"
+          placeholder="Pesquisar nome ..."
           value={searchData.nome}
           onChange={handleSearchChange}
-          style={{ width: "calc(100% - 220px)", padding: "8px", textAlign: "left" }}
+          style={{ width: "calc(100% - 220px)", padding: "9px", textAlign: "left", borderRadius: "20px", border: "1px solid #ccc",}}
         />
+
+        <i
+          className="fa fa-search"
+          onClick={fetchData}
+          style={{
+            position: "absolute",
+            right: "20px", 
+            top: "50%",
+            transform: "translateY(-50%)", 
+            fontSize: "12px",
+            color: "#888",
+            cursor: "pointer",
+          }}
+        ></i>
       </div>
 
       <button
@@ -622,7 +633,10 @@ const proveniencia = filteredData.enrollments
             Imprimir
           </button>
         </div>
+
       </form>
+
+
     </div>
     </>
   );
